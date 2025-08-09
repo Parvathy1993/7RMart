@@ -56,23 +56,23 @@ public class PageUtility {
     }
     
  // Set value using JavaScript (SendKeys)
-    public void setValueByJS(WebElement element, String value, JavascriptExecutor driver) {
+    public void setValueByJS(WebElement element, String value, WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].value='value';", element);
     }
  // Scroll down by pixel
-    public void scrollDownByPixel(int pixels, JavascriptExecutor driver) {
+    public void scrollDownByPixel(int pixels, WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0," + pixels + ");");
     }
     
     // Scroll up by pixel
-    public void scrollUpByPixel(int pixels, JavascriptExecutor driver) {
+    public void scrollUpByPixel(int pixels, WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,-" + pixels + ");");
     }
     // Scroll to bottom of page
-    public void scrollToBottom(JavascriptExecutor driver) {
+    public void scrollToBottom(WebDriver driver) {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,document.body.scrollHeight)");
     }

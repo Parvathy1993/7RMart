@@ -9,7 +9,7 @@ public class NewsPage {
 	
 public WebDriver driver;
 	
-	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']")WebElement managenews;
+	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/news/add'and @onclick='click_button(1)']")WebElement addnew;
 	@FindBy(xpath="//textarea[@id='news']") WebElement enternews;
 	@FindBy(xpath="//button[@name='create']") WebElement savebutton;
@@ -21,23 +21,23 @@ public WebDriver driver;
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
-	public void clickManageNews()
-	{
-		managenews.click();
-	}
-	public void clickAddNews()
+	
+	public NewsPage clickAddNews()
 	{
 		addnew.click();
+		return this;
 	}
-	public void enterNews(String news)
+	public NewsPage enterNews(String news)
 	{
 		enternews.sendKeys(news);
+		return this;
 	}
-	public void save()
+	public NewsPage save()
 	{
 		savebutton.click();
+		return this;
 	}
-	public Boolean alertIsDiaplayed()
+	public boolean alertIsDiaplayed()
 	{
 		return alert.isDisplayed();
 	}

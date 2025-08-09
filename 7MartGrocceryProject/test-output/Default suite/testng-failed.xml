@@ -6,6 +6,7 @@
       <class name="testscript.ManageContactTest">
         <methods>
           <include name="verifyWhetherUserCanUpdateContact"/>
+          <include name="browserQuit"/>
           <include name="browserInitilization"/>
         </methods>
       </class> <!-- testscript.ManageContactTest -->

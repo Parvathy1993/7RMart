@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ManageFooterPage {
 	
-	@FindBy(xpath="//a[@class='small-box-footer'and @href='https://groceryapp.uniqassosiates.com/admin/list-footertext']")WebElement managefooter;
+	
 	@FindBy(xpath="//a[@href='https://groceryapp.uniqassosiates.com/admin/Footertext/edit?edit=1']")WebElement actions;
 	@FindBy(xpath="//input[@id='email']")WebElement updateemail;
 	@FindBy(xpath="//button[@name='Update']")WebElement update;
@@ -18,26 +18,24 @@ public class ManageFooterPage {
 	public ManageFooterPage(WebDriver driver)
 	{
 		this.driver=driver;
-		PageFactory.initElements(driver, this);
-		
+		PageFactory.initElements(driver, this);	
 	}
 	
-	public void manageFooter()
-	{
-		managefooter.click();
-	}
-	public void action()
+	public ManageFooterPage action()
 	{
 		actions.click();
+		return this;
 	}
-	public void updateemail(String email)
+	public ManageFooterPage updateemail(String email)
 	{
 		updateemail.clear();
 		updateemail.sendKeys(email);
+		return this;
 	}
-	public void update()
+	public ManageFooterPage update()
 	{
 		update.click();
+		return this;
 	}
 	public Boolean alertIsDisplayed()
 	{
